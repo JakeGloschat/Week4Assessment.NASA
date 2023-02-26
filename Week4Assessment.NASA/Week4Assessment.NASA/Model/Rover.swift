@@ -9,41 +9,47 @@ import Foundation
 
 class Rover {
     
-    let photos: [String: Any]
-    let cameraDict: [String: Any]
+//    let photosArray: [[String: Any]]
+//    let cameraDict: [String: Any]
     let cameraName: String
-    let earthDate: String
-    let roverDict: [String: Any]
-    let roverName: String
+//    let roverDict: [String: Any]
     let picturePath: String
     
     enum Keys: String {
-        case photos
+        case photosArray = "photos"
         case camera
         case cameraName = "full_name"
-        case earthDate = "earth_date"
         case roverDict
-        case roverName = "rover"
         case picturePath = "img_src"
         
     }
     
-    init?(dictionary: [String : Any]) {
-        guard let photos = dictionary[Keys.photos.rawValue] as? [String: Any],
-              let cameraDict = dictionary["camera"] as? [String : Any],
-              let cameraName = cameraDict[Keys.cameraName.rawValue] as? String,
-              let earthDate = dictionary[Keys.earthDate.rawValue] as? String,
-              let roverDict = dictionary["rover"] as? [String: Any],
-              let roverName = roverDict[Keys.roverName.rawValue] as? String,
-              let picturePath = dictionary[Keys.picturePath.rawValue] as? String else { return nil}
-              
-        self.photos = photos
-        self.cameraDict = cameraDict
-        self.cameraName = cameraName
-        self.earthDate = earthDate
-        self.roverDict = roverDict
-        self.roverName = roverName
-        self.picturePath = picturePath
-    }
+//    init?(TopLevelDictionary: [String : Any]) {
+//        guard let photosArray = TopLevelDictionary[Keys.photosArray.rawValue] as? [[String : Any]] else { return nil }
+//
+//       // var photos: [String] = []
+//        var tempName = ""
+//        var tempPath = ""
+//        for dict in photosArray {
+//            guard let cameraDict = dict[Keys.camera.rawValue] as? [String : Any],
+//                  let picturePath = dict[Keys.picturePath.rawValue] as? String,
+//                  let cameraName = cameraDict[Keys.cameraName.rawValue] as? String else { return nil }
+//            tempName = cameraName
+//            tempPath = picturePath
+//        }
+//
+////        self.photosArray = photosArray
+////        self.cameraDict = cameraDict
+//        self.cameraName = tempName
+//        self.picturePath = tempPath
+//    }
     
+    init?(photosDict: [String: Any]) {
+        guard let posterPath = photosDict[Keys.photosArray.rawValue] as? String,
+              let cameraDict = photosDict[Keys.camera.rawValue] as? [String:Any],
+              let cameraName = cameraDict[Keys.picturePath.rawValue] as? String else {return nil}
+        
+        self.cameraName = cameraName
+        self.picturePath = posterPath
+    }
 }

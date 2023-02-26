@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNZ-sk-QzW">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="dLz-7M-PQS">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="gNZ-sk-QzW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wvf-8t-mlD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0SL-zh-5dY">
+                                <rect key="frame" x="0.0" y="63" width="393" height="751"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dlF-nQ-muE">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
+                                        <segments>
+                                            <segment title="Spirit"/>
+                                            <segment title="Opportunity"/>
+                                            <segment title="Curiosity"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <searchBar contentMode="redraw" verticalHuggingPriority="500" placeholder="yyyy/mm/dd..." translatesAutoresizingMaskIntoConstraints="NO" id="4IW-a1-ADU">
+                                        <rect key="frame" x="0.0" y="35" width="393" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gNZ-sk-QzW" id="zYQ-Dm-ecW"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LGA-BV-qtC">
+                                        <rect key="frame" x="0.0" y="95" width="393" height="656"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hha-lp-5pg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hha-lp-5pg" firstAttribute="bottom" secondItem="0SL-zh-5dY" secondAttribute="bottom" constant="4" id="21I-bf-1FU"/>
+                            <constraint firstItem="0SL-zh-5dY" firstAttribute="centerY" secondItem="hha-lp-5pg" secondAttribute="centerY" id="OgP-kb-tXd"/>
+                            <constraint firstItem="0SL-zh-5dY" firstAttribute="centerX" secondItem="hha-lp-5pg" secondAttribute="centerX" id="X86-Sn-8Kf"/>
+                            <constraint firstItem="0SL-zh-5dY" firstAttribute="top" secondItem="hha-lp-5pg" secondAttribute="top" constant="4" id="ze9-eq-3zb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="ayE-8J-yTr" id="5xg-BN-zqP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6EI-VB-hkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ayE-8J-yTr">
+                    <connections>
+                        <outlet property="delegate" destination="gNZ-sk-QzW" id="EQL-X9-Fi3"/>
+                        <outlet property="searchBar" destination="4IW-a1-ADU" id="Vi5-WD-UVs"/>
+                        <outlet property="searchContentsController" destination="gNZ-sk-QzW" id="mdN-Ou-1BI"/>
+                        <outlet property="searchResultsDataSource" destination="gNZ-sk-QzW" id="anQ-ZF-N7U"/>
+                        <outlet property="searchResultsDelegate" destination="gNZ-sk-QzW" id="7eh-qa-cgk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="200.76335877862596" y="-176.05633802816902"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

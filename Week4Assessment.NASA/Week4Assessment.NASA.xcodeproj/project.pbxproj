@@ -13,6 +13,9 @@
 		233FBCDC29AAA9CF008CB891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233FBCDB29AAA9CF008CB891 /* Assets.xcassets */; };
 		233FBCDF29AAA9CF008CB891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233FBCDD29AAA9CF008CB891 /* LaunchScreen.storyboard */; };
 		233FBCEA29AAAA8B008CB891 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCE929AAAA8B008CB891 /* Rover.swift */; };
+		233FBCEE29AAEDF9008CB891 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCED29AAEDF9008CB891 /* Constants.swift */; };
+		233FBCF029AB0201008CB891 /* CuriosityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCEF29AB0201008CB891 /* CuriosityController.swift */; };
+		233FBCF229AC0DB6008CB891 /* MarsRoversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		233FBCDE29AAA9CF008CB891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		233FBCE029AAA9CF008CB891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		233FBCE929AAAA8B008CB891 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		233FBCED29AAEDF9008CB891 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		233FBCEF29AB0201008CB891 /* CuriosityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityController.swift; sourceTree = "<group>"; };
+		233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		233FBCD129AAA9CE008CB891 /* Week4Assessment.NASA */ = {
 			isa = PBXGroup;
 			children = (
+				233FBCF329AC0DBF008CB891 /* ViewControllers */,
 				233FBCEB29AAED1B008CB891 /* ModelController */,
 				233FBCE829AAAA4E008CB891 /* Model */,
 				233FBCE729AAAA2F008CB891 /* Storyboards */,
@@ -71,6 +78,7 @@
 				233FBCD429AAA9CE008CB891 /* SceneDelegate.swift */,
 				233FBCDB29AAA9CF008CB891 /* Assets.xcassets */,
 				233FBCE029AAA9CF008CB891 /* Info.plist */,
+				233FBCED29AAEDF9008CB891 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -95,8 +103,17 @@
 		233FBCEB29AAED1B008CB891 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				233FBCEF29AB0201008CB891 /* CuriosityController.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		233FBCF329AC0DBF008CB891 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233FBCF029AB0201008CB891 /* CuriosityController.swift in Sources */,
 				233FBCD329AAA9CE008CB891 /* AppDelegate.swift in Sources */,
 				233FBCD529AAA9CE008CB891 /* SceneDelegate.swift in Sources */,
 				233FBCEA29AAAA8B008CB891 /* Rover.swift in Sources */,
+				233FBCF229AC0DB6008CB891 /* MarsRoversViewController.swift in Sources */,
+				233FBCEE29AAEDF9008CB891 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
