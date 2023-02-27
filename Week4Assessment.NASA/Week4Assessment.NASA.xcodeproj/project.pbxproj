@@ -14,8 +14,9 @@
 		233FBCDF29AAA9CF008CB891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233FBCDD29AAA9CF008CB891 /* LaunchScreen.storyboard */; };
 		233FBCEA29AAAA8B008CB891 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCE929AAAA8B008CB891 /* Rover.swift */; };
 		233FBCEE29AAEDF9008CB891 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCED29AAEDF9008CB891 /* Constants.swift */; };
-		233FBCF029AB0201008CB891 /* CuriosityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCEF29AB0201008CB891 /* CuriosityController.swift */; };
-		233FBCF229AC0DB6008CB891 /* MarsRoversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */; };
+		233FBCF029AB0201008CB891 /* RoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FBCEF29AB0201008CB891 /* RoverController.swift */; };
+		235D328729AC14FB0081AE1D /* MarsRoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D328629AC14FB0081AE1D /* MarsRoverViewController.swift */; };
+		235D328929AC2B770081AE1D /* RoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D328829AC2B770081AE1D /* RoverTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		233FBCE029AAA9CF008CB891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		233FBCE929AAAA8B008CB891 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 		233FBCED29AAEDF9008CB891 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		233FBCEF29AB0201008CB891 /* CuriosityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityController.swift; sourceTree = "<group>"; };
-		233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversViewController.swift; sourceTree = "<group>"; };
+		233FBCEF29AB0201008CB891 /* RoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverController.swift; sourceTree = "<group>"; };
+		235D328629AC14FB0081AE1D /* MarsRoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverViewController.swift; sourceTree = "<group>"; };
+		235D328829AC2B770081AE1D /* RoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 		233FBCEB29AAED1B008CB891 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				233FBCEF29AB0201008CB891 /* CuriosityController.swift */,
+				233FBCEF29AB0201008CB891 /* RoverController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -111,7 +113,8 @@
 		233FBCF329AC0DBF008CB891 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				233FBCF129AC0DB6008CB891 /* MarsRoversViewController.swift */,
+				235D328629AC14FB0081AE1D /* MarsRoverViewController.swift */,
+				235D328829AC2B770081AE1D /* RoverTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,11 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				233FBCF029AB0201008CB891 /* CuriosityController.swift in Sources */,
+				235D328729AC14FB0081AE1D /* MarsRoverViewController.swift in Sources */,
+				233FBCF029AB0201008CB891 /* RoverController.swift in Sources */,
 				233FBCD329AAA9CE008CB891 /* AppDelegate.swift in Sources */,
+				235D328929AC2B770081AE1D /* RoverTableViewCell.swift in Sources */,
 				233FBCD529AAA9CE008CB891 /* SceneDelegate.swift in Sources */,
 				233FBCEA29AAAA8B008CB891 /* Rover.swift in Sources */,
-				233FBCF229AC0DB6008CB891 /* MarsRoversViewController.swift in Sources */,
 				233FBCEE29AAEDF9008CB891 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

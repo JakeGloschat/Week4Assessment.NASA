@@ -8,64 +8,99 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mars Rover View Controller-->
         <scene sceneID="dLz-7M-PQS">
             <objects>
-                <viewController id="gNZ-sk-QzW" sceneMemberID="viewController">
+                <viewController id="gNZ-sk-QzW" customClass="MarsRoverViewController" customModule="Week4Assessment_NASA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wvf-8t-mlD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0SL-zh-5dY">
-                                <rect key="frame" x="0.0" y="63" width="393" height="751"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dlF-nQ-muE">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
-                                        <segments>
-                                            <segment title="Spirit"/>
-                                            <segment title="Opportunity"/>
-                                            <segment title="Curiosity"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <searchBar contentMode="redraw" verticalHuggingPriority="500" placeholder="yyyy/mm/dd..." translatesAutoresizingMaskIntoConstraints="NO" id="4IW-a1-ADU">
-                                        <rect key="frame" x="0.0" y="35" width="393" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dlF-nQ-muE">
+                                <rect key="frame" x="56" y="59" width="281" height="32"/>
+                                <segments>
+                                    <segment title="Spirit"/>
+                                    <segment title="Opportunity"/>
+                                    <segment title="Curiosity"/>
+                                </segments>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" verticalHuggingPriority="500" placeholder="yyyy-mm-dd...." translatesAutoresizingMaskIntoConstraints="NO" id="4IW-a1-ADU">
+                                <rect key="frame" x="16" y="94" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gNZ-sk-QzW" id="zYQ-Dm-ecW"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-we-Us8">
+                                <rect key="frame" x="8" y="152" width="377" height="658"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cameraCell" rowHeight="247" id="Zqo-K2-mzj" customClass="RoverTableViewCell" customModule="Week4Assessment_NASA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="247"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zqo-K2-mzj" id="oPI-ED-Bh5">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="247"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CCQ-go-KTq">
+                                                    <rect key="frame" x="24" y="15" width="329" height="217"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Rover Camera Name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kn8-3D-er8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ktf-bG-bpu">
+                                                            <rect key="frame" x="0.0" y="19" width="329" height="198"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ktf-bG-bpu" secondAttribute="height" multiplier="329:198" id="j4I-bn-Wgl"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ktf-bG-bpu" firstAttribute="width" secondItem="oPI-ED-Bh5" secondAttribute="width" multiplier="0.872679" id="3p6-FL-Yhq"/>
+                                                <constraint firstItem="CCQ-go-KTq" firstAttribute="leading" secondItem="oPI-ED-Bh5" secondAttribute="leadingMargin" constant="4" id="c7g-jW-BYr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CCQ-go-KTq" secondAttribute="bottom" constant="4" id="mLs-V2-6jc"/>
+                                                <constraint firstItem="CCQ-go-KTq" firstAttribute="top" secondItem="oPI-ED-Bh5" secondAttribute="topMargin" constant="4" id="nCj-IB-Jh3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CCQ-go-KTq" secondAttribute="trailing" constant="4" id="oSt-Wl-Ugw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="delegate" destination="gNZ-sk-QzW" id="zYQ-Dm-ecW"/>
+                                            <outlet property="marsPhotoImageView" destination="ktf-bG-bpu" id="RdG-Ba-Hd1"/>
+                                            <outlet property="roverCameraNameLabel" destination="Kn8-3D-er8" id="y3E-FC-Vhv"/>
                                         </connections>
-                                    </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LGA-BV-qtC">
-                                        <rect key="frame" x="0.0" y="95" width="393" height="656"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </tableView>
-                                </subviews>
-                            </stackView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hha-lp-5pg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hha-lp-5pg" firstAttribute="bottom" secondItem="0SL-zh-5dY" secondAttribute="bottom" constant="4" id="21I-bf-1FU"/>
-                            <constraint firstItem="0SL-zh-5dY" firstAttribute="centerY" secondItem="hha-lp-5pg" secondAttribute="centerY" id="OgP-kb-tXd"/>
-                            <constraint firstItem="0SL-zh-5dY" firstAttribute="centerX" secondItem="hha-lp-5pg" secondAttribute="centerX" id="X86-Sn-8Kf"/>
-                            <constraint firstItem="0SL-zh-5dY" firstAttribute="top" secondItem="hha-lp-5pg" secondAttribute="top" constant="4" id="ze9-eq-3zb"/>
+                            <constraint firstItem="hha-lp-5pg" firstAttribute="bottom" secondItem="yYf-we-Us8" secondAttribute="bottom" constant="8" id="1GR-x1-9cF"/>
+                            <constraint firstItem="4IW-a1-ADU" firstAttribute="centerX" secondItem="hha-lp-5pg" secondAttribute="centerX" id="29c-iW-GIp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4IW-a1-ADU" secondAttribute="trailing" id="3Fr-jM-UR8"/>
+                            <constraint firstItem="yYf-we-Us8" firstAttribute="top" secondItem="4IW-a1-ADU" secondAttribute="bottom" constant="2" id="J5A-3y-XDw"/>
+                            <constraint firstItem="dlF-nQ-muE" firstAttribute="top" secondItem="hha-lp-5pg" secondAttribute="top" id="JhZ-ud-VAb"/>
+                            <constraint firstItem="dlF-nQ-muE" firstAttribute="centerX" secondItem="hha-lp-5pg" secondAttribute="centerX" id="M3V-BC-Ug5"/>
+                            <constraint firstItem="yYf-we-Us8" firstAttribute="leading" secondItem="hha-lp-5pg" secondAttribute="leading" constant="8" id="WgZ-mK-UFs"/>
+                            <constraint firstItem="hha-lp-5pg" firstAttribute="trailing" secondItem="yYf-we-Us8" secondAttribute="trailing" constant="8" id="ZfT-Xc-sjS"/>
+                            <constraint firstItem="4IW-a1-ADU" firstAttribute="leading" secondItem="Wvf-8t-mlD" secondAttribute="leadingMargin" id="gcK-gX-tvc"/>
+                            <constraint firstItem="4IW-a1-ADU" firstAttribute="top" secondItem="dlF-nQ-muE" secondAttribute="bottom" constant="4" id="wDy-rH-jo1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="ayE-8J-yTr" id="5xg-BN-zqP"/>
+                        <outlet property="earthDateSearchBar" destination="4IW-a1-ADU" id="g7m-Jw-ZYh"/>
+                        <outlet property="marsPhotosTableView" destination="yYf-we-Us8" id="xFV-Ce-wOO"/>
+                        <outlet property="roverSegmentedController" destination="dlF-nQ-muE" id="JEo-Fx-oXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6EI-VB-hkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ayE-8J-yTr">
-                    <connections>
-                        <outlet property="delegate" destination="gNZ-sk-QzW" id="EQL-X9-Fi3"/>
-                        <outlet property="searchBar" destination="4IW-a1-ADU" id="Vi5-WD-UVs"/>
-                        <outlet property="searchContentsController" destination="gNZ-sk-QzW" id="mdN-Ou-1BI"/>
-                        <outlet property="searchResultsDataSource" destination="gNZ-sk-QzW" id="anQ-ZF-N7U"/>
-                        <outlet property="searchResultsDelegate" destination="gNZ-sk-QzW" id="7eh-qa-cgk"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="200.76335877862596" y="-176.05633802816902"/>
+            <point key="canvasLocation" x="-369" y="-133"/>
         </scene>
     </scenes>
     <resources>
