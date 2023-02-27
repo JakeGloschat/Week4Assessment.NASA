@@ -26,14 +26,11 @@ class MarsRoverViewController: UIViewController {
     var rover: Rover?
     var rovers: [Rover]? = []
     
-// MARK: - Functions
-    
-
 } // End of Class
 
 extension MarsRoverViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let rovers = rovers else { return 0}
+        guard let rovers = rovers else { return 0 }
         return rovers.count
     }
     

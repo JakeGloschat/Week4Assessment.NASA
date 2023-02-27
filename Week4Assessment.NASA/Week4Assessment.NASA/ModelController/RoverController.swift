@@ -10,9 +10,7 @@ import UIKit
 class RoverController {
     
     static func fetchRover(selectedRover: Int, searchDate: String, completion: @escaping ([Rover]?) -> Void) {
-        
-        //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=yoJFuCab70ggeMgN3YHDJaxb8pq23Ga7QHNrwhTq
-        
+
         // MARK: - Construct URL
         guard let baseURL = URL(string: Constants.NasaURL.baseURL) else { completion(nil) ; return }
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -83,4 +81,3 @@ class RoverController {
         }.resume()
     }
 }
-

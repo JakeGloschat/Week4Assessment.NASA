@@ -13,8 +13,4 @@ class RoverTableViewCell: UITableViewCell {
     @IBOutlet var roverCameraNameLabel: UILabel!
     @IBOutlet var marsPhotoImageView: UIImageView!
     
-    // MARK: - Functions
-    func updateViews(rover: Rover) {
-      
-    }
 }
